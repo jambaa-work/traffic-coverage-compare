@@ -1,0 +1,73 @@
+/**
+ * @file        src/style.css
+ * @author      jambaa
+ * @created     2026-11-18
+ * @description Layout and styling: toolbar, 2x2 map grid, pane badges and notices.
+ * SPDX-License-Identifier: MIT
+ */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; font: 13px/1.4 system-ui, sans-serif; background: #111; color: #eee; }
+body { display: flex; flex-direction: column; }
+
+.toolbar { display: flex; align-items: center; gap: 12px; padding: 6px 10px; background: #1b1b1b; border-bottom: 1px solid #333; flex-wrap: wrap; }
+.presets { display: flex; gap: 6px; flex-wrap: wrap; }
+.presets button, .toolbar select { background: #2a2a2a; color: #eee; border: 1px solid #444; border-radius: 4px; padding: 3px 8px; cursor: pointer; font: inherit; }
+.presets button:hover { background: #3a3a3a; }
+.toggle { display: flex; align-items: center; gap: 4px; }
+.clock { margin-left: auto; font-variant-numeric: tabular-nums; color: #aaa; }
+
+.grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; background: #333; min-height: 0; }
+.pane { position: relative; min-height: 0; background: #222; }
+.pane .map { position: absolute; inset: 0; }
+
+/* Pane badge: status dot + provider title, then label/value rows. */
+.badge {
+  --accent: #6b7280;
+  position: absolute; top: 10px; left: 10px; z-index: 10;
+  min-width: 220px; max-width: calc(100% - 20px);
+  padding: 10px 12px 10px 14px;
+  background: rgba(17, 18, 22, .82);
+  -webkit-backdrop-filter: blur(10px) saturate(140%); backdrop-filter: blur(10px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+  color: #f3f4f6;
+  pointer-events: auto;
+  transition: border-color .2s;
+}
+.badge[data-state="good"] { --accent: #4ade80; }
+.badge[data-state="warn"] { --accent: #fbbf24; }
+.badge[data-state="bad"]  { --accent: #f87171; }
+
+.badge .head { display: flex; align-items: center; gap: 8px; }
+.badge .dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+.badge[data-state="idle"] .dot { animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .35; } }
+.badge .title { font-weight: 600; font-size: 13px; letter-spacing: .1px; min-width: 0; flex: 1; }
+
+.badge select {
+  appearance: none; -webkit-appearance: none;
+  width: 100%; padding: 2px 22px 2px 0;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%239ca3af' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 4px center;
+  border: 0; border-radius: 6px;
+  color: inherit; font: inherit; font-weight: 600; cursor: pointer;
+}
+.badge select:hover { background-color: rgba(255, 255, 255, .06); }
+.badge select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.badge select option { background: #1f2937; color: #f3f4f6; font-weight: 400; }
+
+.badge .stats { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, .08); }
+.badge .kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0; align-items: center; }
+.badge .kv dt { color: #9ca3af; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; }
+.badge .kv dd { margin: 0; font-size: 12px; font-variant-numeric: tabular-nums; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.badge .kv strong { font-size: 13px; }
+.badge .chips { display: inline-flex; gap: 4px; }
+.badge .chip { display: inline-flex; align-items: center; gap: 4px; padding: 0 6px; border-radius: 999px; background: rgba(255, 255, 255, .07); font-size: 11px; }
+.badge .chip i { width: 8px; height: 3px; border-radius: 2px; }
+.badge .muted { color: #9ca3af; }
+.badge .warn { color: #fbbf24; }
+.badge .bad { color: #f87171; }
+.badge .good { color: #4ade80; }
+
+.notice { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; color: #aaa; padding: 20px; pointer-events: none; }

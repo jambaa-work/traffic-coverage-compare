@@ -1,0 +1,97 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "congestion": "heavy"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      106.88,
+      47.917
+     ],
+     [
+      106.9,
+      47.9175
+     ],
+     [
+      106.917,
+      47.918
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "congestion": "moderate"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      106.917,
+      47.918
+     ],
+     [
+      106.935,
+      47.918
+     ],
+     [
+      106.95,
+      47.9175
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "congestion": "severe"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      106.9176,
+      47.9185
+     ],
+     [
+      106.9176,
+      47.905
+     ],
+     [
+      106.917,
+      47.889
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "congestion": "low"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      106.86,
+      47.919
+     ],
+     [
+      106.87,
+      47.919
+     ],
+     [
+      106.88,
+      47.917
+     ]
+    ]
+   }
+  }
+ ]
+}

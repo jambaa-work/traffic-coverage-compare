@@ -1,0 +1,54 @@
+{
+  "$comment": "City presets used by the app and the scripts. Author: jambaa. Created: 2026-11-18. Add your own city here; see README 'Test your own city'. `view.zoom` is a MapLibre zoom (Google zoom = zoom + 1). `sampleRoads` is optional and points to a GeoJSON file under /public used by the 'Synthetic demo' provider.",
+  "defaultCity": "ulaanbaatar",
+  "cities": [
+    {
+      "id": "ulaanbaatar",
+      "name": "Ulaanbaatar",
+      "country": "MN",
+      "view": { "lng": 106.9176, "lat": 47.9185, "zoom": 13 },
+      "sampleRoads": "samples/ulaanbaatar-roads.geojson",
+      "presets": [
+        { "name": "Center (Sukhbaatar Sq.)", "view": { "lng": 106.9176, "lat": 47.9185, "zoom": 13 } },
+        { "name": "Peace Avenue", "view": { "lng": 106.885, "lat": 47.9165, "zoom": 13.5 } },
+        { "name": "3rd/4th microdistrict", "view": { "lng": 106.868, "lat": 47.919, "zoom": 14 } },
+        { "name": "Zaisan", "view": { "lng": 106.917, "lat": 47.889, "zoom": 14 } },
+        { "name": "Narnii Road", "view": { "lng": 106.93, "lat": 47.905, "zoom": 14 } },
+        { "name": "Whole city", "view": { "lng": 106.92, "lat": 47.915, "zoom": 11.5 } }
+      ]
+    },
+    {
+      "id": "almaty",
+      "name": "Almaty",
+      "country": "KZ",
+      "view": { "lng": 76.945, "lat": 43.238, "zoom": 13 },
+      "presets": [
+        { "name": "Center", "view": { "lng": 76.945, "lat": 43.238, "zoom": 13 } },
+        { "name": "Whole city", "view": { "lng": 76.92, "lat": 43.25, "zoom": 11 } }
+      ]
+    },
+    {
+      "id": "bangkok",
+      "name": "Bangkok",
+      "country": "TH",
+      "view": { "lng": 100.5393, "lat": 13.7466, "zoom": 13 },
+      "presets": [
+        { "name": "Center (Siam)", "view": { "lng": 100.5393, "lat": 13.7466, "zoom": 13 } },
+        { "name": "Sukhumvit (Asok)", "view": { "lng": 100.5605, "lat": 13.737, "zoom": 14 } },
+        { "name": "Silom", "view": { "lng": 100.53, "lat": 13.727, "zoom": 14 } },
+        { "name": "Whole city", "view": { "lng": 100.55, "lat": 13.75, "zoom": 10.5 } }
+      ]
+    },
+    {
+      "id": "berlin",
+      "name": "Berlin",
+      "country": "DE",
+      "view": { "lng": 13.3777, "lat": 52.5163, "zoom": 13 },
+      "presets": [
+        { "name": "Center (Brandenburg Gate)", "view": { "lng": 13.3777, "lat": 52.5163, "zoom": 13 } },
+        { "name": "Alexanderplatz", "view": { "lng": 13.4132, "lat": 52.5219, "zoom": 14 } },
+        { "name": "Whole city", "view": { "lng": 13.4, "lat": 52.52, "zoom": 10.5 } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "map-traffic-compare",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Side-by-side comparison of real-time traffic layers (Google, TomTom, HERE, Mapbox, your own feed) for any city, with objective coverage measurement.",
+  "author": "jambaa",
+  "license": "MIT",
+  "keywords": [
+    "traffic",
+    "maps",
+    "maplibre",
+    "openstreetmap",
+    "tomtom",
+    "here",
+    "mapbox",
+    "google-maps",
+    "coverage"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "typecheck": "tsc",
+    "preview": "vite preview",
+    "check-keys": "node scripts/check-keys.mjs",
+    "control-test": "node scripts/control-test.mjs",
+    "fetch-roads": "node scripts/fetch-roads.mjs"
+  },
+  "dependencies": {
+    "maplibre-gl": "6.6.0"
+  },
+  "devDependencies": {
+    "typescript": "6.0.2",
+    "vite": "8.1.1"
+  }
+}

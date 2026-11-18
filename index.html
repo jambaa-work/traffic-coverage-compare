@@ -1,0 +1,31 @@
+<!doctype html>
+<!--
+  @file        index.html
+  @author      jambaa
+  @created     2026-11-18
+  @description Page shell: toolbar and the 2x2 map grid. Logic lives in src/main.ts.
+  SPDX-License-Identifier: MIT
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Traffic Compare</title>
+  </head>
+  <body>
+    <header class="toolbar">
+      <strong>Map Traffic Compare</strong>
+      <select id="city" aria-label="City"></select>
+      <div id="presets" class="presets"></div>
+      <label class="toggle"><input id="gray" type="checkbox" checked /> Grayscale OSM</label>
+      <span id="clock" class="clock"></span>
+    </header>
+    <main class="grid">
+      <section class="pane" id="pane-google"></section>
+      <section class="pane" id="pane-tr"></section>
+      <section class="pane" id="pane-bl"></section>
+      <section class="pane" id="pane-br"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

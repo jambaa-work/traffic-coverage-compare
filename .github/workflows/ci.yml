@@ -1,0 +1,23 @@
+# @file        .github/workflows/ci.yml
+# @author      jambaa
+# @created     2026-11-18
+# @description CI: installs dependencies, type-checks and builds on every push and pull request.
+#              No API keys are needed; the build works with an empty environment.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node --check scripts/lib.mjs && node --check scripts/check-keys.mjs && node --check scripts/control-test.mjs && node --check scripts/fetch-roads.mjs
